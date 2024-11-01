@@ -1,4 +1,20 @@
+import { NavLink } from "react-router-dom";
+
 const NavBar = () => {
+  const links = (
+    <>
+      <li className="mx-1">
+        <NavLink to="/">Home</NavLink>
+      </li>
+
+      <li className="mx-1">
+        <NavLink to={"/list"}>Listed Books</NavLink>
+      </li>
+      <li className="mx-1">
+        <NavLink to={"/read"}>Pages to Read</NavLink>
+      </li>
+    </>
+  );
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -21,34 +37,15 @@ const NavBar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content hover:bg-transparent hover:border-2 hover:border-green-300 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-
-            <li>
-              <a>Item 4</a>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className=" font-bold text-2xl">Book Lover</a>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <a>Item 4</a>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
-        </ul>
+      <div className="navbar-center hidden lg:flex gap-2">
+        <ul className="menu menu-horizontal px-2 ">{links}</ul>
       </div>
       <div className="navbar-end">
         <a className="btn">Button</a>

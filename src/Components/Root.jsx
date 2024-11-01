@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 const Root = () => {
   return (
-    <div>
+    <div className="w-full md:w-[80%] max-w-screen-2xl mx-auto">
       <NavBar></NavBar>
       <Outlet></Outlet>
       <Footer></Footer>
