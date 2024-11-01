@@ -8,13 +8,23 @@ const BookDetails = () => {
   //   console.log(data);
   const book = data.find((book) => book.bookId === id);
   console.log(book);
-  const { image, author, bookName, rating, category, tags, review } = book;
+  const {
+    image,
+    author,
+    bookName,
+    rating,
+    yearOfPublishing,
+    publisher,
+    totalPages,
+    category,
+    tags,
+    review,
+  } = book;
   return (
-    <div>
-      {/* <h1 className="text-2xl font-bold">show the book details here</h1> */}
-      <div className="hero  rounded-2xl border-2 border-blue-400  mb-5">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center sm:text-left">
+    <div className="">
+      <div className="hero rounded-2xl mb-5">
+        <div className="hero-content flex-col lg:flex-row-reverse ">
+          <div className="text-center sm:text-left w-full md:w-[50%] ">
             <h1 className="text-5xl font-bold mb-2">{bookName}</h1>
             <h5 className="flex text-stone-500 font-semibold gap-2 text-xl ">
               <span>By : </span> <span>{author}</span>
@@ -37,10 +47,38 @@ const BookDetails = () => {
                 </div>
               </div>
             </div>
-
-            <button className="btn btn-outline btn-success">Get Started</button>
+            <div className="flex gap-4 mb-3">
+              <div className=" ">
+                <div className="my-2 font-semibold ">
+                  <h6 className="text-gray-500">Number of pages :</h6>
+                </div>
+                <div className="my-2 font-semibold ">
+                  <h6 className="text-gray-500">Publisher :</h6>
+                </div>
+                <div className="my-2 font-semibold ">
+                  <h6 className="text-gray-500">Year of Publishing :</h6>
+                </div>
+                <div className="my-2 font-semibold ">
+                  <h6 className="text-gray-500">Rating :</h6>
+                </div>
+              </div>
+              <div className="">
+                <h3 className="font-bold my-2">{totalPages}</h3>
+                <h3 className="font-bold my-2">{publisher}</h3>
+                <h3 className="font-bold my-2">{yearOfPublishing}</h3>
+                <h3 className="font-bold my-2">{rating}</h3>
+              </div>
+            </div>
+            <div className="flex justify-center items-center gap-2">
+              <button className="btn btn-outline btn-primary font-bold">
+                Read
+              </button>
+              <button className="btn btn-outline btn-primary font-bold  ">
+                Wishlist
+              </button>
+            </div>
           </div>
-          <div className="bg-base-200  rounded-xl  p-12">
+          <div className="bg-base-200  rounded-xl w-full md:w-[50%] p-12">
             <img className="w-[80%] rounded-xl mx-auto" src={image} />
           </div>
         </div>
