@@ -4,7 +4,7 @@ const Banner = () => {
     <div className="hero  rounded-2xl bg-base-200 mb-5">
       <div className="hero-content  flex-col lg:flex-row-reverse">
         <img className="w-[20%]" src={bannerImg} />
-        <div className="w-1/2">
+        <div className="w-full sm:w-1/2 text-center sm:text-left">
           <h1 className="text-5xl font-bold">Box Office News!</h1>
           <p className="py-6">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda

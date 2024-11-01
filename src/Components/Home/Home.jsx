@@ -1,11 +1,11 @@
 import Banner from "../Banner/Banner";
-import Content from "../Content/Content";
+import BooksBox from "../BooksBox/BooksBox";
 
 const Home = () => {
   return (
     <div className="my-2">
       <Banner></Banner>
-      <Content></Content>
+      <BooksBox></BooksBox>
     </div>
   );
 };
