@@ -18,7 +18,7 @@ const setData = (key,id) =>{
             localStorage.setItem(key,JSON.stringify(setValue))
       }
 }
-export {setData}
+export {setData,getLocalStr}
 
 
 
