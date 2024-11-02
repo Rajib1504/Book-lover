@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { setData } from "../../utility/addToDB";
 
 const BookDetails = () => {
   const { bookId } = useParams();
@@ -20,6 +21,15 @@ const BookDetails = () => {
     tags,
     review,
   } = book;
+
+  // const handelMarkAsRead = () => {
+  //   /**
+  //    * 1.understand what to store: book id
+  //    * 2. where to store:database
+  //    * 3.array,list,collection,
+  //    * 4.check if the book is already there if yes then return dont save if no then add there.
+  //    */
+  // };
   return (
     <div className="">
       <div className="hero rounded-2xl mb-5">
@@ -70,10 +80,20 @@ const BookDetails = () => {
               </div>
             </div>
             <div className="flex justify-center items-center gap-2">
-              <button className="btn btn-outline btn-primary font-bold">
+              <button
+                onClick={() => {
+                  setData("Read", bookId);
+                }}
+                className="btn btn-outline btn-primary font-bold"
+              >
                 Read
               </button>
-              <button className="btn btn-outline btn-primary font-bold  ">
+              <button
+                onClick={() => {
+                  setData("wishList", bookId);
+                }}
+                className="btn btn-outline btn-primary font-bold  "
+              >
                 Wishlist
               </button>
             </div>

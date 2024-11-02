@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import bannerImg from "../../assets/images/banner img.png";
 const Banner = () => {
   return (
@@ -11,7 +12,9 @@ const Banner = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button className="btn btn-outline btn-success">Get Started</button>
+          <button className="btn btn-outline btn-success">
+            <Link to={"/list"}>Get Started</Link>
+          </button>
         </div>
       </div>
     </div>
