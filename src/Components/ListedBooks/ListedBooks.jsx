@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { RiArrowDropDownLine } from "react-icons/ri";
 import { getLocalStr } from "../../utility/addToDB";
 import Content from "../Content/Content";
 import ReadBook from "../ReadBook/ReadBook";
+import WishList from "../WishList/WishList";
 
 const ListedBooks = () => {
   const [readList, setreadList] = useState([]);
   const [wishList, setWishList] = useState([]);
+  const [sort, setSort] = useState("");
   const allBooks = useLoaderData();
 
   useEffect(() => {
@@ -31,12 +34,35 @@ const ListedBooks = () => {
     );
     setWishList(wishList);
   }, []);
+  const handelShort = (selectShort) => {
+    setSort(selectShort);
+  };
   return (
-    <div>
-      <h1 className="text-2xl font-bold text-center mb-20">
-        {" "}
-        Listed books are here{" "}
-      </h1>
+    <div className="text-center mb-20">
+      <div>
+        <h1 className="text-2xl font-bold text-center mb-20">
+          {" "}
+          Listed books are here{" "}
+        </h1>
+        <details className="dropdown">
+          <summary className="btn m-1 bg-green-400 text-white">
+            <div className="flex justify-between items-center">
+              <span>{sort ? `Sort By : ${sort}` : "Sort By"} </span>
+              <span>
+                <RiArrowDropDownLine className="text-xl" />
+              </span>
+            </div>
+          </summary>
+          <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+            <li onClick={() => handelShort("Rating")}>
+              <a>Ratings</a>
+            </li>
+            <li onClick={() => handelShort("Pages")}>
+              <a>Number of pages</a>
+            </li>
+          </ul>
+        </details>
+      </div>
 
       <div
         role="tablist"
@@ -72,7 +98,8 @@ const ListedBooks = () => {
           className="tab-content bg-base-100 border-base-300 border-l-0 rounded-box p-6"
         >
           {wishList.map((book) => (
-            <Content key={book.bookId} book={book}></Content>
+            <WishList key={book.bookId} book={book}></WishList>
+            // <Content key={book.bookId} book={book}></Content>
           ))}
         </div>
       </div>
