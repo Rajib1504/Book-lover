@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getLocalStr } from "../../utility/addToDB";
 import Content from "../Content/Content";
+import ReadBook from "../ReadBook/ReadBook";
 
 const ListedBooks = () => {
   const [readList, setreadList] = useState([]);
@@ -53,10 +54,11 @@ const ListedBooks = () => {
           className="tab-content bg-base-100 border-base-300 border-l-0 rounded-box p-6 "
         >
           {readList.map((book) => (
-            <Content key={book.bookId} book={book}></Content>
+            <ReadBook key={book.bookId} book={book}></ReadBook>
+            // <Content key={book.bookId} book={book}></Content>
           ))}
         </div>
-
+        {/* Wish list  */}
         <input
           type="radio"
           name="my_tabs_2"

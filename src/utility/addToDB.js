@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const getLocalStr = (key)=>{
 const getData = localStorage.getItem(key)
 if(getData){
@@ -16,6 +18,8 @@ const setData = (key,id) =>{
       else{
             setValue.push(id)
             localStorage.setItem(key,JSON.stringify(setValue))
+            // ideally trigger the tost from the component 
+            toast(`This book is added to your ${key}  list`)
       }
 }
 export {setData,getLocalStr}
