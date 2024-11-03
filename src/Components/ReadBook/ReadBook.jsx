@@ -22,7 +22,7 @@ const ReadBook = ({ book }) => {
             <img src={image} className="w-28 rounded-lg shadow-2xl" />
           </figure>
           <div className=" flex-col flex gap-2">
-            <h1 className="text-2xl font-bold">{bookName}</h1>
+            <h1 className="text-2xl  text-left font-bold">{bookName}</h1>
             <h5 className="font-medium text-black text-sm flex gap-2">
               <span>By :</span>
               <span>{author}</span>

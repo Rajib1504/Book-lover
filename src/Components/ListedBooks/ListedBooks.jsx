@@ -8,6 +8,7 @@ import WishList from "../WishList/WishList";
 
 const ListedBooks = () => {
   const [readList, setreadList] = useState([]);
+  // console.log(readList);
   const [wishList, setWishList] = useState([]);
   const [sort, setSort] = useState("");
   const allBooks = useLoaderData();
@@ -36,6 +37,21 @@ const ListedBooks = () => {
   }, []);
   const handelShort = (selectShort) => {
     setSort(selectShort);
+    if (selectShort === "Rating") {
+      const shortReadList = [...readList].sort((a, b) => b.rating - a.rating);
+      setreadList(shortReadList);
+      return;
+    } else {
+      console.log([]);
+    }
+    if (selectShort === "Pages") {
+      const sortPageList = [...readList].sort(
+        (a, b) => a.totalPages - b.totalPages
+      );
+      setreadList(sortPageList);
+    } else {
+      console.log([]);
+    }
   };
   return (
     <div className="text-center mb-20">
