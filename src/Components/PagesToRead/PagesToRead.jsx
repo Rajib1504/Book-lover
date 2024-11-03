@@ -29,13 +29,14 @@ const PagesToRead = () => {
   return (
     <div>
       <h1 className="text-2xl text-center font-bold mb-8">Pages to Read</h1>
-      <BarChart width={730} height={250} data={""}>
+      <BarChart width={1200} height={450} data={readList}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+        <XAxis dataKey="bookName" />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="bookName" fill="#82ca9d" />
+        <Bar dataKey="totalPages" fill="#8884d8" />
+        {/* <Bar dataKey="rating" fill="#82ca9d" /> */}
       </BarChart>
     </div>
   );
