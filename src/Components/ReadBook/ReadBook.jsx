@@ -1,6 +1,7 @@
 import { GrLocation } from "react-icons/gr";
 import { LuUsers2 } from "react-icons/lu";
 import { IoBookSharp } from "react-icons/io5";
+
 const ReadBook = ({ book }) => {
   //   console.log(book);
   const {
